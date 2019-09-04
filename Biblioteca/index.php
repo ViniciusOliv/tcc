@@ -14,7 +14,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 bg-primary" >
-                    <h1 class="display-4">BILIOTECA ONLINE</h1>
+                    <h1 class="display-4">BIBLIOTECA ONLINE</h1>
                 </div>
             </div>
             <div class="row">
@@ -67,7 +67,7 @@
                     <div class="dropdown-menu">
                       <a class="dropdown-item" href="#" id="inclui_livros">Incluir Livros</a>
                       <a class="dropdown-item" href="#">Alterar Livros</a>
-                      <a class="dropdown-item" href="#">Consultar Livros</a>
+                      <a class="dropdown-item" href="#" id="select_livros">Consultar Livros</a>
                       <a class="dropdown-item" href="#" id="excluir_livro">Excluir Livros</a>
                     </div>
                   </li>
@@ -166,6 +166,13 @@
                 $("#inclui_livros").click(function(){ 
                     $(function(){
                             $("#conteudo-pagina-lida").load("inclui_livros.php"); 
+                    });
+                })
+            });
+            $(document).ready(function(){
+                $("#select_livros").click(function(){ 
+                    $(function(){
+                            $("#conteudo-pagina-lida").load("select_livros.php"); 
                     });
                 })
             });
