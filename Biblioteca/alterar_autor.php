@@ -4,7 +4,7 @@ $codigo =  $_GET['id'];
 require 'classes/repositorio_autor_class.php';
 $registro_autor = new repositorioAutorMySQL ();
 $listagem_autor = $registro_autor->buscarAutor($codigo);
-
+echo ($codigo);
 ?>
 
 <form action="altera_autor.php" method="POST">

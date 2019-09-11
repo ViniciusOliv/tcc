@@ -32,7 +32,7 @@ class RepositorioAutorMySQL implements IRepositorioAutor{
     }
     // remove um autor da lista
     public function removerAutor($codigo) {
-        $sql = "DELETE FROM autores WHERE codigo = '$codigo'";
+        $sql = "DELETE FROM autores WHERE id_autor = '$codigo'";
         $this->conexao->executarQuery($sql);
     }
     // altera autor da lista
@@ -42,7 +42,7 @@ class RepositorioAutorMySQL implements IRepositorioAutor{
         $foto = $autor->getFoto();
         $descricao = $autor->getDescricao();
         
-        $sql = "UPDATE autores SET id_autor = '$codigo', nome = '$nome', foto = '$foto', descricao = '$descricao' WHERE codigo = '$codigo'";
+        $sql = "UPDATE autores SET id_autor = '$codigo', nome = '$nome', foto = '$foto', descricao = '$descricao' WHERE id_autor = '$codigo'";
         
         $this->conexao->executarQuery($sql);
     }
@@ -52,7 +52,7 @@ class RepositorioAutorMySQL implements IRepositorioAutor{
     public function buscarAutor($codigo) {
         $linha = $this->conexao->obtemPrimeiroRegistroQuery("SELECT * FROM autores WHERE id_autor = '$codigo'");
         $autor = new autor(
-             $linha['codigo'],
+             $linha['id_autor'],
              $linha['nome'],
              $linha['foto'],
              $linha['descricao']

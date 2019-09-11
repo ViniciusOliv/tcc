@@ -1,15 +1,15 @@
 <?php
 
-
+$codigo = $_GET['id'];
 require_once 'classes/repositorio_autor_class.php'; 
 
-$codigo = $_GET['id_autor'];
+echo ($codigo);
 
+$registro_autor = new repositorioAutorMySQL();
 
-$registro_autor = new repositorioAutorMySQL ();
+$listagem_autor = $registro_autor->removerAutor($codigo);
+echo ("Excluido com sucesso");
 
-$lista_autor = $registro_autor->removerAutor($codigo);
-
-
+header("Location: index.php");
 ?>
 

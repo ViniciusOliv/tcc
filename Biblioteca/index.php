@@ -35,7 +35,7 @@
                       <a class="dropdown-item" href="#" id="inclui_autor">Incluir Autores</a>
                       <a class="dropdown-item" href="#">Alterar Autores</a>
                       <a class="dropdown-item" href="#" id="select_autor">Consultar Autores</a>
-                      <a class="dropdown-item" href="#" id="excluir_autor">Excluir Autores</a>
+                      
                     </div>
                   </li>
                   <li class="nav-item dropdown">
@@ -176,13 +176,7 @@
                     });
                 })
             });
-            $(document).ready(function(){
-                $("#excluir_livros").click(function(){ 
-                    $(function(){
-                            $("#conteudo-pagina-lida").load("excluir_autor.php"); 
-                    });
-                })
-            });
+            
     </script>
 
                 
